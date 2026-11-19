@@ -61,12 +61,12 @@
     <!-- CONTENEDOR MÓVIL CENTRADO -->
     <div class="max-w-md mx-auto min-h-screen bg-[#FAF7F9] shadow-2xl flex flex-col relative overflow-x-hidden">
 
-        <!-- ENCABEZADO (SIN BALANZA Y SIN SUBTÍTULO EXTRA) -->
+        <!-- ENCABEZADO -->
         <header class="sticky top-0 z-30 text-white px-5 pt-4 pb-5 rounded-b-3xl shadow-lg" style="background: linear-gradient(135deg, #2D1115 0%, #65334D 58%, #CB04A5 100%);">
             <div class="flex items-center justify-between gap-2">
                 <div>
                     <h1 class="text-2xl font-extrabold tracking-wide uppercase text-white leading-tight">LEGAL-TECH</h1>
-<div class="text-sm font-semibold text-[#F433AB]">Justicia a tu alcance</div>
+                    <div class="text-sm font-semibold text-[#F433AB]">Justicia a tu alcance</div>
                 </div>
 
                 <!-- CONTROLES DE ACCESIBILIDAD (A-, A+, VOZ Y PRIVACIDAD) -->
@@ -88,48 +88,55 @@
         </header>
 
         <!-- ÁREA DE CONTENIDO PRINCIPAL -->
-       <!-- TARJETA 1 (ARRIBA): ORIENTACIÓN GRATUITA -->
-<!-- TARJETA 1 (ARRIBA): ORIENTACIÓN GRATUITA EN ROSA/MAGENTA VIBRANTE -->
-<div class="rounded-3xl p-5 text-white shadow-lg relative overflow-hidden" style="background: linear-gradient(135deg, #F433AB 0%, #CB04A5 100%);">
-    <div class="flex items-center gap-1.5 text-xs font-extrabold tracking-wider uppercase text-white/95 mb-1.5">
-        <i data-lucide="sparkles" class="w-4 h-4 text-white"></i>
-        <span>ORIENTACIÓN GRATUITA 24/7 EN JALISCO</span>
-    </div>
-    <h2 class="text-xl font-extrabold text-white leading-snug mb-2">
-        Pregúntale a la ley con tus propias palabras
-    </h2>
-    <p class="text-sm text-white/95 leading-relaxed mb-4">
-        Resuelve dudas de despidos, escrituras de casas o terrenos, pensiones, divorcios, pagarés y citatorios judiciales sin tecnicismos.
-    </p>
-    <button onclick="cambiarPestana('ia')" class="w-full py-3.5 px-4 rounded-2xl bg-[#2D1115] hover:bg-[#2D1115]/90 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md active:scale-98 transition">
-        <i data-lucide="bot" class="w-5 h-5 text-[#F433AB]"></i>
-        <span>Abrir Asesor Legal IA</span>
-    </button>
-</div>
+        <main class="flex-1 px-4 pt-5 pb-28">
 
-<!-- TARJETA 2 (ABAJO): ALERTA PREVENTIVA EN TONO COMPLEMENTARIO CIRUELA/VINO OSCURO -->
-<div class="rounded-3xl p-5 text-white shadow-lg relative overflow-hidden border border-[#934683]/40" style="background: linear-gradient(135deg, #65334D 0%, #2D1115 100%);">
-    <div class="flex items-start gap-3">
-        <div class="w-10 h-10 rounded-2xl bg-[#F433AB]/20 border border-[#F433AB]/40 flex items-center justify-center shrink-0 mt-0.5">
-            <i data-lucide="alert-circle" class="w-5 h-5 text-[#F433AB]"></i>
-        </div>
-        <div class="flex-1">
-            <span class="inline-block px-2.5 py-0.5 rounded-full bg-[#F433AB] text-white text-[10px] font-extrabold tracking-wider uppercase mb-1.5">
-                ALERTA PREVENTIVA · ART. 33 LFT
-            </span>
-            <h2 class="text-lg font-extrabold leading-snug mb-1.5 text-white">
-                ¿Te piden firmar una hoja en blanco o renuncia?
-            </h2>
-            <p class="text-xs text-white/90 leading-relaxed mb-3.5">
-                ¡No firmes nada bajo presión! Por ley, cualquier renuncia anticipada a tus derechos es nula. Consulta al instante qué hacer.
-            </p>
-            <button onclick="consultarCasoRapido('Me quieren hacer firmar una hoja en blanco o renuncia')" class="w-full py-3 px-4 rounded-2xl bg-white hover:bg-[#FAF7F9] text-[#2D1115] font-extrabold text-xs flex items-center justify-center gap-2 shadow active:scale-98 transition">
-                <i data-lucide="message-square-warning" class="w-4 h-4 text-[#CB04A5]"></i>
-                <span>Consultar este caso en el Asesor IA</span>
-            </button>
-        </div>
-    </div>
-</div>
+            <!-- ==========================================
+                 1. PESTAÑA INICIO
+                 ========================================== -->
+            <section id="tab-inicio" class="tab-panel active space-y-5">
+
+                <!-- TARJETA 1 (ARRIBA): ORIENTACIÓN GRATUITA EN ROSA/MAGENTA VIBRANTE -->
+                <div class="rounded-3xl p-5 text-white shadow-lg relative overflow-hidden" style="background: linear-gradient(135deg, #F433AB 0%, #CB04A5 100%);">
+                    <div class="flex items-center gap-1.5 text-xs font-extrabold tracking-wider uppercase text-white/95 mb-1.5">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-white"></i>
+                        <span>ORIENTACIÓN GRATUITA 24/7 EN JALISCO</span>
+                    </div>
+                    <h2 class="text-xl font-extrabold text-white leading-snug mb-2">
+                        Pregúntale a la ley con tus propias palabras
+                    </h2>
+                    <p class="text-sm text-white/95 leading-relaxed mb-4">
+                        Resuelve dudas de despidos, escrituras de casas o terrenos, pensiones, divorcios, pagarés y citatorios judiciales sin tecnicismos.
+                    </p>
+                    <button onclick="irATab('ia')" class="w-full py-3.5 px-4 rounded-2xl bg-[#2D1115] hover:bg-[#2D1115]/90 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md active:scale-98 transition">
+                        <i data-lucide="bot" class="w-5 h-5 text-[#F433AB]"></i>
+                        <span>Abrir Asesor Legal IA</span>
+                    </button>
+                </div>
+
+                <!-- TARJETA 2 (ABAJO): ALERTA PREVENTIVA EN TONO COMPLEMENTARIO CIRUELA/VINO OSCURO -->
+                <div class="rounded-3xl p-5 text-white shadow-lg relative overflow-hidden border border-[#934683]/40" style="background: linear-gradient(135deg, #65334D 0%, #2D1115 100%);">
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-2xl bg-[#F433AB]/20 border border-[#F433AB]/40 flex items-center justify-center shrink-0 mt-0.5">
+                            <i data-lucide="alert-circle" class="w-5 h-5 text-[#F433AB]"></i>
+                        </div>
+                        <div class="flex-1">
+                            <span class="inline-block px-2.5 py-0.5 rounded-full bg-[#F433AB] text-white text-[10px] font-extrabold tracking-wider uppercase mb-1.5">
+                                ALERTA PREVENTIVA · ART. 33 LFT
+                            </span>
+                            <h2 class="text-lg font-extrabold leading-snug mb-1.5 text-white">
+                                ¿Te piden firmar una hoja en blanco o renuncia?
+                            </h2>
+                            <p class="text-xs text-white/90 leading-relaxed mb-3.5">
+                                ¡No firmes nada bajo presión! Por ley, cualquier renuncia anticipada a tus derechos es nula. Consulta al instante qué hacer.
+                            </p>
+                            <button onclick="consultarCasoDirecto('Me quieren hacer firmar una hoja en blanco o renuncia')" class="w-full py-3 px-4 rounded-2xl bg-white hover:bg-[#FAF7F9] text-[#2D1115] font-extrabold text-xs flex items-center justify-center gap-2 shadow active:scale-98 transition">
+                                <i data-lucide="message-square-warning" class="w-4 h-4 text-[#CB04A5]"></i>
+                                <span>Consultar este caso en el Asesor IA</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- CALCULADORA RÁPIDA DE LIQUIDACIÓN / FINIQUITO -->
                 <div class="bg-white rounded-2xl p-5 shadow-sm border border-[#65334D]/15 space-y-3.5">
                     <div class="flex items-center justify-between">
@@ -177,17 +184,6 @@
                             *Incluye parte proporcional de aguinaldo (Art. 87), vacaciones y prima vacacional (Arts. 76 y 80), más 90 días de indemnización constitucional en caso de despido (Art. 48 LFT).
                         </p>
                     </div>
-                </div>
-
-                <!-- VISTA PREVIA DE 3 DESPACHOS ALEATORIOS -->
-                <div class="space-y-2.5">
-                    <div class="flex items-center justify-between px-1">
-                        <h3 class="text-xs font-extrabold text-[#2D1115] uppercase tracking-wider">Especialistas en Jalisco</h3>
-                        <button onclick="irATab('abogados')" class="text-xs font-bold text-[#CB04A5] hover:underline flex items-center gap-1">
-                            Ver todos <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                        </button>
-                    </div>
-                    <div id="preview-despachos-inicio" class="space-y-2.5"></div>
                 </div>
 
             </section>
@@ -752,7 +748,6 @@
                 lucide.createIcons();
             }
             mezclarArrayFisherYates(directorioDespachos);
-            renderizarPreviewInicio();
             renderizarLeyes();
             renderizarAbogados();
             mostrarGuia('laboral');
@@ -844,30 +839,6 @@
                 <div class="flex justify-between"><span>Prima vacacional 25% (Art. 80):</span><strong>${formatoMXN.format(primaVacacional)}</strong></div>
             `;
             document.getElementById('caja-resultado-calc').classList.remove('hidden');
-        }
-
-        /* RENDERIZAR PREVIEW DE 3 DESPACHOS EN INICIO */
-        function renderizarPreviewInicio() {
-            const contenedor = document.getElementById('preview-despachos-inicio');
-            const muestra = directorioDespachos.slice(0, 3);
-            contenedor.innerHTML = muestra.map(function(d) {
-                return `
-                    <div onclick="irATab('abogados')" class="bg-white p-3.5 rounded-2xl border border-[#65334D]/15 shadow-sm flex items-center justify-between cursor-pointer hover:border-[#CB04A5] transition">
-                        <div class="flex items-center gap-3 min-w-0">
-                            <div class="w-10 h-10 rounded-xl ${d.gratuito ? 'bg-[#2D1115] text-white' : 'bg-[#CB04A5]/15 text-[#CB04A5]'} font-extrabold flex items-center justify-center text-xs shrink-0">
-                                ${d.siglas}
-                            </div>
-                            <div class="truncate">
-                                <div class="font-bold text-sm text-[#2D1115] truncate">${d.nombre}</div>
-                                <div class="text-xs text-[#65334D] truncate">${d.rama} · ${d.municipio}</div>
-                            </div>
-                        </div>
-                        <span class="shrink-0 ml-2 text-[11px] font-bold px-2.5 py-1 rounded-full ${d.gratuito ? 'bg-emerald-100 text-emerald-800' : 'bg-[#FAF7F9] text-[#2D1115] border border-[#65334D]/20'}">
-                            ${d.gratuito ? 'Gratis' : '★ ' + d.rating}
-                        </span>
-                    </div>
-                `;
-            }).join('');
         }
 
         /* MOTOR DE ANÁLISIS PLN MULTIDISCIPLINARIO */
