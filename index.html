@@ -88,52 +88,47 @@
         </header>
 
         <!-- ÁREA DE CONTENIDO PRINCIPAL -->
-        <main class="flex-1 px-4 pt-4 pb-28 space-y-5">
+       <!-- TARJETA 1 (ARRIBA): ORIENTACIÓN GRATUITA -->
+<div class="bg-white rounded-3xl p-5 shadow-sm border border-[#934683]/15">
+    <div class="flex items-center gap-1.5 text-xs font-extrabold tracking-wider uppercase text-[#934683] mb-1.5">
+        <i data-lucide="sparkles" class="w-4 h-4 text-[#CB04A5]"></i>
+        <span>ORIENTACIÓN GRATUITA 24/7 EN JALISCO</span>
+    </div>
+    <h2 class="text-xl font-extrabold text-[#2D1115] leading-snug mb-2">
+        Pregúntale a la ley con tus propias palabras
+    </h2>
+    <p class="text-sm text-[#65334D] leading-relaxed mb-4">
+        Resuelve dudas de despidos, escrituras de casas o terrenos, pensiones, divorcios, pagarés y citatorios judiciales sin tecnicismos.
+    </p>
+    <button onclick="cambiarPestana('ia')" class="w-full py-3.5 px-4 rounded-2xl bg-[#CB04A5] hover:bg-[#934683] text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md active:scale-98 transition">
+        <i data-lucide="bot" class="w-5 h-5"></i>
+        <span>Abrir Asesor Legal IA</span>
+    </button>
+</div>
 
-            <!-- ==========================================
-                 1. PESTAÑA INICIO
-                 ========================================== -->
-            <section id="tab-inicio" class="tab-panel active space-y-5">
-
-                <!-- TARJETA DE EMERGENCIA PREVENTIVA (ART. 33 LFT) -->
-                <div class="rounded-2xl p-4 text-white shadow-lg" style="background: linear-gradient(125deg, #CB04A5 0%, #F433AB 100%);">
-                    <div class="flex items-start gap-3">
-                        <div class="w-10 h-10 rounded-xl bg-[#2D1115]/30 flex items-center justify-center shrink-0 mt-0.5">
-                            <i data-lucide="alert-octagon" class="w-6 h-6 text-white"></i>
-                        </div>
-                        <div class="flex-1">
-                            <span class="inline-block text-[10px] font-extrabold uppercase tracking-wider bg-[#2D1115] text-white px-2.5 py-0.5 rounded-full mb-1">
-                                Alerta Preventiva · Art. 33 LFT
-                            </span>
-                            <h2 class="text-base font-extrabold leading-snug">¿Te piden firmar una hoja en blanco o renuncia?</h2>
-                            <p class="text-xs text-white/95 mt-1 leading-relaxed">
-                                ¡No firmes nada bajo presión! Por ley, cualquier renuncia anticipada a tus derechos es nula. Consulta al instante qué hacer.
-                            </p>
-                            <button onclick="consultarCasoDirecto('Me quieren hacer firmar hoja en blanco')" class="mt-3 w-full py-2.5 px-4 rounded-xl bg-[#2D1115] hover:bg-black text-white font-bold text-xs flex items-center justify-center gap-2 shadow active:scale-95 transition">
-                                <i data-lucide="message-square-warning" class="w-4 h-4 text-[#F433AB]"></i>
-                                Consultar este caso en el Asesor IA
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- TARJETA PRINCIPAL DE ACCESO AL ASESOR IA -->
-                <div class="bg-white rounded-2xl p-5 shadow-sm border border-[#65334D]/15">
-                    <div class="flex items-center gap-1.5 text-xs font-bold text-[#934683] uppercase tracking-wider mb-1">
-                        <i data-lucide="sparkles" class="w-4 h-4 text-[#CB04A5]"></i>
-                        Orientación gratuita 24/7 en Jalisco
-                    </div>
-                    <h2 class="text-xl font-extrabold text-[#2D1115] leading-tight">
-                        Pregúntale a la ley con tus propias palabras
-                    </h2>
-                    <p class="text-sm text-[#65334D] mt-1.5 leading-relaxed">
-                        Resuelve dudas de despidos, escrituras de casas o terrenos, pensiones, divorcios, pagarés y citatorios judiciales sin tecnicismos.
-                    </p>
-                    <button onclick="irATab('ia')" class="mt-4 w-full py-3.5 px-5 rounded-xl font-bold text-sm text-white shadow-md flex items-center justify-center gap-2 active:scale-95 transition" style="background-color: #CB04A5;">
-                        <i data-lucide="bot" class="w-5 h-5"></i>
-                        Abrir Asesor Legal IA
-                    </button>
-                </div>
+<!-- TARJETA 2 (ABAJO): ALERTA PREVENTIVA -->
+<div class="rounded-3xl p-5 text-white shadow-lg relative overflow-hidden" style="background: linear-gradient(135deg, #F433AB 0%, #CB04A5 100%);">
+    <div class="flex items-start gap-3">
+        <div class="w-10 h-10 rounded-2xl bg-[#2D1115]/20 flex items-center justify-center shrink-0 mt-0.5">
+            <i data-lucide="alert-circle" class="w-5 h-5 text-white"></i>
+        </div>
+        <div class="flex-1">
+            <span class="inline-block px-2.5 py-0.5 rounded-full bg-[#2D1115] text-white text-[10px] font-extrabold tracking-wider uppercase mb-1.5">
+                ALERTA PREVENTIVA · ART. 33 LFT
+            </span>
+            <h2 class="text-lg font-extrabold leading-snug mb-1.5">
+                ¿Te piden firmar una hoja en blanco o renuncia?
+            </h2>
+            <p class="text-xs text-white/95 leading-relaxed mb-3.5">
+                ¡No firmes nada bajo presión! Por ley, cualquier renuncia anticipada a tus derechos es nula. Consulta al instante qué hacer.
+            </p>
+            <button onclick="consultarCasoRapido('Me quieren hacer firmar una hoja en blanco o renuncia')" class="w-full py-3 px-4 rounded-2xl bg-[#2D1115] hover:bg-[#2D1115]/90 text-white font-bold text-xs flex items-center justify-center gap-2 shadow active:scale-98 transition">
+                <i data-lucide="message-square-warning" class="w-4 h-4 text-[#F433AB]"></i>
+                <span>Consultar este caso en el Asesor IA</span>
+            </button>
+        </div>
+    </div>
+</div>
 
                 <!-- CALCULADORA RÁPIDA DE LIQUIDACIÓN / FINIQUITO -->
                 <div class="bg-white rounded-2xl p-5 shadow-sm border border-[#65334D]/15 space-y-3.5">
