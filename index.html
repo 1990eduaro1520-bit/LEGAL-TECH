@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Justicia a tu alcance · Defensa Laboral Jalisco</title>
+    <!-- Tailwind CSS para diseño responsivo y utilidades -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter y Plus Jakarta Sans para máxima legibilidad -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons para iconografía clara y accesible -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            magenta: '#CB04A5',
+                            pink: '#F433AB',
+                            purple: '#934683',
+                            plum: '#65334D',
+                            wine: '#2D1115',
+                            bg: '#FAF7F9'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Estilos base y scrollbar personalizada */
+        body {
+            background-color: #EFE8EC;
+            color: #2D1115;
+            font-family: 'Inter', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* Simulación de marco móvil en escritorio y pantalla completa en celular */
+        .app-shell {
+            max-width: 480px;
+            margin: 0 auto;
+            background-color: #FAF7F9;
+            min-height: 100dvh;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(45, 17, 21, 0.18);
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* Ocultar barras de desplazamiento horizontales en chips */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Animación suave entre pestañas */
+        .tab-view {
+            display: none;
+            animation: fadeIn 0.22s ease-out;
+        }
+        .tab-view.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Pulso para el botón de grabación de voz */
+        .mic-pulse {
+            animation: pulseRing 1.5s infinite;
+        }
+        @keyframes pulseRing {
+            0% { box-shadow: 0 0 0 0 rgba(244, 51, 171, 0.7); }
+            70% { box-shadow: 0 0 0 12px rgba(244, 51, 171, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(244, 51, 171, 0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CONTENEDOR PRINCIPAL DE LA APLICACIÓN -->
+    <div class="app-shell">
+
+        <!-- ENCABEZADO SUPERIOR FIJO -->
+        <header class="sticky top-0 z-30 text-white px-5 pt-4 pb-5 rounded-b-3xl shadow-md" style="background: linear-gradient(135deg, #2D1115 0%, #65334D 55%, #CB04A5 100%);">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-10 h-10 rounded-2xl bg-white/15 backdrop-blur-sm flex items-center justify-center border border-white/20">
+                        <i class="ph-bold ph-scales text-2xl text-[#F433AB]"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-extrabold tracking-tight leading-tight">Justicia a tu alcance</h1>
+                        <p class="text-xs text-pink-200 font-medium">Sin letras chiquitas · Jalisco</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2">
+                    <!-- Botón de lectura de pantalla para accesibilidad -->
+                    <button onclick="leerPantallaActual()" title="Escuchar esta sección en voz alta" class="w-10 h-10 rounded-full bg-white/15 hover:bg-white/25 active:scale-95 transition flex items-center justify-center border border-white/20" aria-label="Escuchar pantalla">
+                        <i class="ph-bold ph-speaker-high text-xl"></i>
+                    </button>
+                    <!-- Botón de privacidad / seguridad -->
+                    <button onclick="abrirModalPrivacidad()" title="Aviso de Privacidad LFPDPPP" class="w-10 h-10 rounded-full bg-white/15 hover:bg-white/25 active:scale-95 transition flex items-center justify-center border border-white/20" aria-label="Privacidad y seguridad">
+                        <i class="ph-bold ph-shield-check text-xl text-emerald-300"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- ÁREA DE CONTENIDO CON SCROLL -->
+        <main class="flex-1 px-4 pt-4 pb-28 space-y-5">
+
+            <!-- ==========================================
+                 PESTAÑA 1: INICIO (HOME)
+                 ========================================== -->
+            <section id="view-inicio" class="tab-view active space-y-5">
+
+                <!-- BANNER DE EMERGENCIA PREVENTIVO (STORYTELLING MOODBOARD) -->
+                <div class="rounded-2xl p-4 text-white shadow-lg relative overflow-hidden" style="background: linear-gradient(120deg, #CB04A5 0%, #F433AB 100%);">
+                    <div class="flex items-start gap-3 relative z-10">
+                        <div class="w-11 h-11 rounded-xl bg-[#2D1115]/25 flex items-center justify-center shrink-0 mt-0.5">
+                            <i class="ph-fill ph-warning-octagon text-2xl text-white"></i>
+                        </div>
+                        <div class="flex-1">
+                            <span class="inline-block text-[11px] font-bold uppercase tracking-wider bg-[#2D1115] text-white px-2.5 py-0.5 rounded-full mb-1">
+                                ¡Que nadie firme sin saber!
+                            </span>
+                            <h2 class="text-base font-extrabold leading-snug">¿Te piden firmar una hoja en blanco o renuncia?</h2>
+                            <p class="text-xs text-white/95 mt-1 leading-relaxed">
+                                ¡Detente! Es una práctica ilegal. Toca aquí para saber qué hacer en este momento sin perder tu dinero.
+                            </p>
+                            <button onclick="abrirModalEmergencia()" class="mt-3 w-full bg-[#2D1115] hover:bg-black text-white font-bold text-sm py-2.5 px-4 rounded-xl shadow flex items-center justify-center gap-2 active:scale-[0.98] transition">
+                                <i class="ph-bold ph-hand-palm text-lg text-[#F433AB]"></i>
+                                Ver guía de emergencia ahora
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TARJETA PRINCIPAL DE ACCESO AL ASESOR IA -->
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-[#65334D]/15">
+                    <div class="flex items-center gap-2 text-xs font-bold text-[#934683] uppercase tracking-wider mb-1">
+                        <i class="ph-fill ph-sparkle text-[#CB04A5]"></i>
+                        Orientación gratuita 24/7
+                    </div>
+                    <h2 class="text-xl font-extrabold text-[#2D1115] leading-tight">
+                        Pregúntale a la ley con tus propias palabras
+                    </h2>
+                    <p class="text-sm text-[#65334D] mt-1.5 leading-relaxed">
+                        Cuéntanos qué pasó en tu trabajo (aunque no tengas contrato ni IMSS). Traducimos tu caso a la Ley Federal del Trabajo al instante.
+                    </p>
+                    <button onclick="cambiarPestana('ia')" class="mt-4 w-full py-3.5 px-5 rounded-xl font-bold text-base text-white shadow-md flex items-center justify-center gap-2.5 active:scale-[0.98] transition" style="background-color: #CB04A5;">
+                        <i class="ph-bold ph-chat-circle-text text-xl"></i>
+                        Consultar Asesor Virtual
+                    </button>
+                </div>
+
+                <!-- ACCIONES RÁPIDAS -->
+                <div>
+                    <h3 class="text-sm font-bold text-[#2D1115] uppercase tracking-wider mb-2.5 px-1">Herramientas rápidas</h3>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="cambiarPestana('leyes')" class="bg-white p-4 rounded-2xl border border-[#65334D]/15 shadow-sm text-left hover:border-[#CB04A5] transition active:scale-95">
+                            <div class="w-10 h-10 rounded-xl bg-[#CB04A5]/10 text-[#CB04A5] flex items-center justify-center mb-2.5">
+                                <i class="ph-bold ph-book-open-text text-2xl"></i>
+                            </div>
+                            <div class="font-bold text-sm text-[#2D1115]">Tus Derechos</div>
+                            <div class="text-xs text-[#65334D] mt-0.5">Explicados en fácil</div>
+                        </button>
+
+                        <button onclick="cambiarPestana('guia')" class="bg-white p-4 rounded-2xl border border-[#65334D]/15 shadow-sm text-left hover:border-[#F433AB] transition active:scale-95">
+                            <div class="w-10 h-10 rounded-xl bg-[#F433AB]/15 text-[#F433AB] flex items-center justify-center mb-2.5">
+                                <i class="ph-bold ph-path text-2xl"></i>
+                            </div>
+                            <div class="font-bold text-sm text-[#2D1115]">Cómo Denunciar</div>
+                            <div class="text-xs text-[#65334D] mt-0.5">Paso a paso en Jalisco</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- CALCULADORA RÁPIDA DE LIQUIDACIÓN / FINIQUITO -->
+                <div class="bg-white rounded-2xl p-5 shadow-sm border border-[#65334D]/15">
+                    <div class="flex items-center justify-between mb-3">
+                        <div>
+                            <span class="text-xs font-bold text-[#CB04A5] uppercase">Calcula lo justo</span>
+                            <h3 class="text-lg font-extrabold text-[#2D1115]">Calculadora de Liquidación</h3>
+                        </div>
+                        <div class="w-10 h-10 rounded-xl bg-[#2D1115] text-white flex items-center justify-center">
+                            <i class="ph-bold ph-calculator text-xl"></i>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3.5 text-sm">
+                        <!-- Tipo de sueldo -->
+                        <div>
+                            <label class="block font-semibold text-[#2D1115] mb-1">¿Cuánto ganas aproximadamente?</label>
+                            <div class="grid grid-cols-2 gap-2">
+                                <input type="number" id="calc-sueldo" placeholder="Ej. 2500" min="1" class="w-full px-3.5 py-3 rounded-xl border border-[#65334D]/30 focus:outline-none focus:border-[#CB04A5] text-base font-semibold text-[#2D1115]">
+                                <select id="calc-periodo" class="w-full px-3 py-3 rounded-xl border border-[#65334D]/30 bg-[#FAF7F9] font-semibold text-[#2D1115] focus:outline-none focus:border-[#CB04A5]">
+                                    <option value="semanal">A la semana</option>
+                                    <option value="quincenal">A la quincena</option>
+                                    <option value="mensual">Al mes</option>
+                                    <option value="diario">Al día</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Antigüedad -->
+                        <div class="grid grid-cols-2 gap-2">
+                            <div>
+                                <label class="block font-semibold text-[#2D1115] mb-1">Años trabajados</label>
+                                <input type="number" id="calc-anios" value="1" min="0" max="50" class="w-full px-3.5 py-3 rounded-xl border border-[#65334D]/30 focus:outline-none focus:border-[#CB04A5] text-base font-semibold text-[#2D1115]">
+                            </div>
+                            <div>
+                                <label class="block font-semibold text-[#2D1115] mb-1">Meses extra</label>
+                                <input type="number" id="calc-meses" value="0" min="0" max="11" class="w-full px-3.5 py-3 rounded-xl border border-[#65334D]/30 focus:outline-none focus:border-[#CB04A5] text-base font-semibold text-[#2D1115]">
+                            </div>
+                        </div>
+
+                        <!-- Motivo de separación -->
+                        <div>
+                            <label class="block font-semibold text-[#2D1115] mb-1">¿Qué sucedió?</label>
+                            <select id="calc-motivo" class="w-full px-3.5 py-3 rounded-xl border border-[#65334D]/30 bg-[#FAF7F9] font-semibold text-[#2D1115] focus:outline-none focus:border-[#CB04A5]">
+                                <option value="despido">Me despidieron sin motivo justo (Liquidación)</option>
+                                <option value="renuncia">Yo decidí renunciar voluntariamente (Finiquito)</option>
+                            </select>
+                        </div>
+
+                        <button onclick="calcularLiquidacion()" class="w-full py-3 rounded-xl font-bold text-white bg-[#2D1115] hover:bg-[#65334D] transition active:scale-[0.98]">
+                            Calcular cuánto me corresponde
+                        </button>
+                    </div>
+
+                    <!-- Resultado de la calculadora -->
+                    <div id="calc-resultado" class="hidden mt-4 p-4 rounded-xl bg-[#FAF7F9] border-2 border-[#CB04A5]/30 space-y-2">
+                        <div class="flex justify-between items-center border-b border-[#65334D]/15 pb-2">
+                            <span class="text-xs font-bold uppercase text-[#65334D]">Estimación Total LFT:</span>
+                            <span id="res-total" class="text-xl font-extrabold text-[#CB04A5]">$0.00</span>
+                        </div>
+                        <div class="text-xs space-y-1.5 text-[#2D1115]" id="res-desglose"></div>
+                        <p class="text-[11px] text-[#65334D] pt-1 italic">
+                            *Cálculo orientativo conforme a los Arts. 48, 76, 80, 87 y 162 de la Ley Federal del Trabajo. No incluye salarios caídos ni horas extra adeudadas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ABOGADOS DESTACADOS EN ZMG -->
+                <div>
+                    <div class="flex items-center justify-between mb-2.5 px-1">
+                        <h3 class="text-sm font-bold text-[#2D1115] uppercase tracking-wider">Defensa Ética en ZMG</h3>
+                        <button onclick="cambiarPestana('abogados')" class="text-xs font-bold text-[#CB04A5] hover:underline">Ver todos</button>
+                    </div>
+                    <div class="space-y-2.5">
+                        <div onclick="cambiarPestana('abogados')" class="bg-white p-3.5 rounded-2xl border border-[#65334D]/15 shadow-sm flex items-center justify-between cursor-pointer hover:border-[#CB04A5] transition">
+                            <div class="flex items-center gap-3">
+                                <div class="w-11 h-11 rounded-full bg-[#2D1115] text-white font-bold flex items-center justify-center text-sm">PRO</div>
+                                <div>
+                                    <div class="font-bold text-sm text-[#2D1115]">PROFEDET Jalisco (Gratuita)</div>
+                                    <div class="text-xs text-[#65334D]">Procuraduría de la Defensa del Trabajo</div>
+                                </div>
+                            </div>
+                            <span class="text-xs font-bold bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full">100% Gratis</span>
+                        </div>
+
+                        <div onclick="cambiarPestana('abogados')" class="bg-white p-3.5 rounded-2xl border border-[#65334D]/15 shadow-sm flex items-center justify-between cursor-pointer hover:border-[#CB04A5] transition">
+                            <div class="flex items-center gap-3">
+                                <div class="w-11 h-11 rounded-full bg-[#CB04A5]/15 text-[#CB04A5] font-bold flex items-center justify-center text-sm">ALG</div>
+                                <div>
+                                    <div class="font-bold text-sm text-[#2D1115]">Lic. Ana Laura Gómez</div>
+                                    <div class="text-xs text-[#65334D]">Despidos Injustificados · Guadalajara</div>
+                                </div>
+                            </div>
+                            <span class="text-xs font-bold bg-[#FAF7F9] border border-[#65334D]/20 text-[#2D1115] px-2.5 py-1 rounded-full">★ 4.9</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 PESTAÑA 2: ASESOR IA (CHATBOT PLN JALISCO)
+                 ========================================== -->
+            <section id="view-ia" class="tab-view">
+                <div class="bg-white rounded-2xl border border-[#65334D]/15 shadow-sm flex flex-col h-[calc(100dvh-185px)] min-h-[460px] overflow-hidden">
+                    <!-- Barra superior del chat -->
+                    <div class="px-4 py-3 bg-[#2D1115] text-white flex items-center justify-between">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></div>
+                            <div>
+                                <div class="text-sm font-bold leading-none">Asesor Legal IA · Jalisco</div>
+                                <div class="text-[11px] text-pink-200 mt-0.5">Lenguaje ciudadano · Sin tecnicismos</div>
+                            </div>
+                        </div>
+                        <button onclick="reiniciarChat()" class="text-xs bg-white/10 hover:bg-white/20 px-2.5 py-1 rounded-lg transition">
+                            Limpiar
+                        </button>
+                    </div>
+
+                    <!-- Historial de mensajes -->
+                    <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-3 bg-[#FAF7F9]">
+                        <!-- Mensaje de bienvenida -->
+                        <div class="flex flex-col items-start max-w-[88%]">
+                            <div class="bg-white p-3.5 rounded-2xl rounded-tl-none shadow-sm border border-[#65334D]/15 text-sm text-[#2D1115] leading-relaxed">
+                                ¡Hola! Soy tu orientador legal laboral en Jalisco. Escribe o dicta con tus propias palabras qué te pasó en el trabajo.
+                                <br><br>
+                                <span class="text-xs font-semibold text-[#934683]">🔒 Tu consulta es confidencial y anónima.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sugerencias rápidas con modismos locales -->
+                    <div class="px-3 py-2 bg-white border-t border-[#65334D]/10">
+                        <div class="text-[11px] font-bold text-[#65334D] mb-1.5">Toca una situación común:</div>
+                        <div class="flex gap-2 overflow-x-auto no-scrollbar pb-1">
+                            <button onclick="enviarPreguntaRapida('Me quieren hacer firmar una hoja en blanco')" class="shrink-0 text-xs font-semibold bg-[#F433AB]/10 text-[#CB04A5] border border-[#CB04A5]/30 px-3 py-1.5 rounded-full hover:bg-[#CB04A5] hover:text-white transition">
+                                📄 Hoja en blanco
+                            </button>
+                            <button onclick="enviarPreguntaRapida('Me corrieron sin darme nada de liquidación')" class="shrink-0 text-xs font-semibold bg-[#934683]/10 text-[#65334D] border border-[#65334D]/30 px-3 py-1.5 rounded-full hover:bg-[#65334D] hover:text-white transition">
+                                🚪 Me corrieron sin nada
+                            </button>
+                            <button onclick="enviarPreguntaRapida('Trabajo de palabra sin contrato ni seguro IMSS')" class="shrink-0 text-xs font-semibold bg-[#934683]/10 text-[#65334D] border border-[#65334D]/30 px-3 py-1.5 rounded-full hover:bg-[#65334D] hover:text-white transition">
+                                👷 Sin contrato ni IMSS
+                            </button>
+                            <button onclick="enviarPreguntaRapida('Trabajo más de 10 horas y no me pagan horas extra')" class="shrink-0 text-xs font-semibold bg-[#934683]/10 text-[#65334D] border border-[#65334D]/30 px-3 py-1.5 rounded-full hover:bg-[#65334D] hover:text-white transition">
+                                ⏰ Horas extra sin pago
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Caja de entrada de texto y voz -->
+                    <form onsubmit="manejarEnvioChat(event)" class="p-3 bg-white border-t border-[#65334D]/15 flex items-center gap-2">
+                        <button type="button" id="btn-mic" onclick="activarDictadoVoz()" title="Hablar por micrófono" class="w-11 h-11 rounded-full bg-[#FAF7F9] border border-[#65334D]/30 text-[#65334D] hover:text-[#CB04A5] flex items-center justify-center shrink-0 transition">
+                            <i class="ph-bold ph-microphone text-xl"></i>
+                        </button>
+                        <input type="text" id="chat-input" placeholder="Escribe tu problema aquí..." class="flex-1 px-4 py-2.5 rounded-full bg-[#FAF7F9] border border-[#65334D]/25 text-sm text-[#2D1115] focus:outline-none focus:border-[#CB04A5]" required>
+                        <button type="submit" class="w-11 h-11 rounded-full text-white flex items-center justify-center shrink-0 shadow active:scale-95 transition" style="background-color: #CB04A5;" aria-label="Enviar consulta">
+                            <i class="ph-bold ph-paper-plane-right text-lg"></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 PESTAÑA 3: LEYES LFT (SIN LETRAS CHIQUITAS)
+                 ========================================== -->
+            <section id="view-leyes" class="tab-view space-y-4">
+                <div class="bg-white p-4 rounded-2xl border border-[#65334D]/15 shadow-sm">
+                    <h2 class="text-lg font-extrabold text-[#2D1115]">Diccionario Ciudadano LFT</h2>
+                    <p class="text-xs text-[#65334D] mt-0.5">Traducimos la Ley Federal del Trabajo a palabras claras.</p>
+                    <div class="relative mt-3">
+                        <i class="ph-bold ph-magnifying-glass absolute left-3.5 top-3.5 text-[#934683] text-lg"></i>
+                        <input type="text" id="buscador-leyes" onkeyup="filtrarLeyes()" placeholder="Busca: aguinaldo, hoja en blanco, despido..." class="w-full pl-10 pr-4 py-3 rounded-xl bg-[#FAF7F9] border border-[#65334D]/25 text-sm text-[#2D1115] focus:outline-none focus:border-[#CB04A5]">
+                    </div>
+                </div>
+
+                <!-- Contenedor de tarjetas de artículos LFT -->
+                <div id="lista-leyes" class="space-y-3"></div>
+            </section>
+
+            <!-- ==========================================
+                 PESTAÑA 4: ABOGADOS (FILTRADO COLABORATIVO ZMG)
+                 ========================================== -->
+            <section id="view-abogados" class="tab-view space-y-4">
+                <!-- Banner dinámico cuando viene de un diagnóstico IA -->
+                <div id="banner-matching" class="hidden rounded-2xl p-4 text-white shadow-md" style="background: linear-gradient(135deg, #2D1115 0%, #934683 100%);">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[11px] font-bold uppercase tracking-wider bg-[#F433AB] px-2.5 py-0.5 rounded-full">
+                            Filtrado Colaborativo Activo
+                        </span>
+                        <button onclick="limpiarMatching()" class="text-xs underline text-pink-200">Restablecer</button>
+                    </div>
+                    <h3 class="text-base font-extrabold mt-1.5" id="matching-titulo">Recomendados para tu caso</h3>
+                    <p class="text-xs text-pink-100 mt-0.5" id="matching-desc">Ordenados por especialidad, ética y cercanía en la ZMG.</p>
+                </div>
+
+                <!-- Filtros por Municipio ZMG -->
+                <div class="bg-white p-4 rounded-2xl border border-[#65334D]/15 shadow-sm space-y-3">
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-lg font-extrabold text-[#2D1115]">Red de Defensa Ética</h2>
+                        <span class="text-xs font-bold text-[#CB04A5] bg-[#CB04A5]/10 px-2.5 py-1 rounded-full">ZMG Jalisco</span>
+                    </div>
+                    <p class="text-xs text-[#65334D]">
+                        Sin "coyotes" ni cobros abusivos. Filtra por tu municipio en la Zona Metropolitana de Guadalajara:
+                    </p>
+                    <select id="filtro-municipio" onchange="renderizarAbogados()" class="w-full px-3.5 py-2.5 rounded-xl bg-[#FAF7F9] border border-[#65334D]/30 text-sm font-semibold text-[#2D1115] focus:outline-none focus:border-[#CB04A5]">
+                        <option value="Todos">📍 Todos los municipios (ZMG)</option>
+                        <option value="Guadalajara">Guadalajara</option>
+                        <option value="Zapopan">Zapopan</option>
+                        <option value="Tlaquepaque">San Pedro Tlaquepaque</option>
+                        <option value="Tonalá">Tonalá</option>
+                        <option value="Tlajomulco">Tlajomulco de Zúñiga</option>
+                        <option value="El Salto">El Salto</option>
+                    </select>
+                </div>
+
+                <!-- Lista de abogados / instancias -->
+                <div id="lista-abogados" class="space-y-3"></div>
+            </section>
+
+            <!-- ==========================================
+                 PESTAÑA 5: GUÍA PASO A PASO PARA DENUNCIAR
+                 ========================================== -->
+            <section id="view-guia" class="tab-view space-y-4">
+                <!-- Alerta de prescripción 60 días -->
+                <div class="rounded-2xl p-4 bg-[#F433AB]/10 border-2 border-[#F433AB] text-[#2D1115]">
+                    <div class="flex items-center gap-2 font-extrabold text-[#CB04A5] text-sm">
+                        <i class="ph-fill ph-clock-countdown text-xl"></i>
+                        ¡PLAZO MUY IMPORTANTE! (Art. 518 LFT)
+                    </div>
+                    <p class="text-sm mt-1 leading-relaxed">
+                        Tienes <strong>60 días naturales (2 meses)</strong> a partir del día en que te despidieron para iniciar tu reclamo legal. ¡No dejes pasar el tiempo!
+                    </p>
+                </div>
+
+                <!-- Línea de tiempo de 4 pasos -->
+                <div class="bg-white p-5 rounded-2xl border border-[#65334D]/15 shadow-sm space-y-5">
+                    <h2 class="text-lg font-extrabold text-[#2D1115]">Ruta de Justicia Laboral en Jalisco</h2>
+
+                    <div class="relative pl-8 border-l-2 border-[#CB04A5]/30 space-y-6">
+                        <!-- Paso 1 -->
+                        <div class="relative">
+                            <span class="absolute -left-[41px] w-7 h-7 rounded-full bg-[#CB04A5] text-white font-bold text-xs flex items-center justify-center shadow">1</span>
+                            <h3 class="font-extrabold text-sm text-[#2D1115]">No firmes nada en blanco y junta pruebas</h3>
+                            <p class="text-xs text-[#65334D] mt-1 leading-relaxed">
+                                Guarda mensajes de WhatsApp, fotos de tu lugar de trabajo, recibos de transferencia, gafete o testigos. Aunque no tengas contrato escrito, la ley te protege.
+                            </p>
+                        </div>
+
+                        <!-- Paso 2 -->
+                        <div class="relative">
+                            <span class="absolute -left-[41px] w-7 h-7 rounded-full bg-[#934683] text-white font-bold text-xs flex items-center justify-center shadow">2</span>
+                            <h3 class="font-extrabold text-sm text-[#2D1115]">Calcula lo que te corresponde</h3>
+                            <p class="text-xs text-[#65334D] mt-1 leading-relaxed">
+                                Usa nuestra calculadora en <strong>Inicio</strong> para saber el monto real de tu liquidación y evitar que te ofrezcan menos de lo justo.
+                            </p>
+                        </div>
+
+                        <!-- Paso 3 -->
+                        <div class="relative">
+                            <span class="absolute -left-[41px] w-7 h-7 rounded-full bg-[#65334D] text-white font-bold text-xs flex items-center justify-center shadow">3</span>
+                            <h3 class="font-extrabold text-sm text-[#2D1115]">Acude al Centro de Conciliación Laboral</h3>
+                            <p class="text-xs text-[#65334D] mt-1 leading-relaxed">
+                                Antes de demandar, es obligatorio intentar un acuerdo rápido en el <strong>Centro de Conciliación Laboral del Estado de Jalisco</strong> (máximo 45 días). El trámite es gratuito.
+                            </p>
+                        </div>
+
+                        <!-- Paso 4 -->
+                        <div class="relative">
+                            <span class="absolute -left-[41px] w-7 h-7 rounded-full bg-[#2D1115] text-white font-bold text-xs flex items-center justify-center shadow">4</span>
+                            <h3 class="font-extrabold text-sm text-[#2D1115]">Audiencia o Tribunal Laboral</h3>
+                            <p class="text-xs text-[#65334D] mt-1 leading-relaxed">
+                                Se cita al patrón. Si llegan a un acuerdo, te pagan ahí mismo. Si no hay acuerdo, te entregan tu constancia para demandar ante los Tribunales Laborales con apoyo de PROFEDET o tu abogado vinculado.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Botón de contacto directo PROFEDET -->
+                    <a href="tel:8009117877" class="mt-2 w-full py-3.5 px-4 rounded-xl bg-[#2D1115] hover:bg-[#65334D] text-white font-bold text-sm flex items-center justify-center gap-2 shadow transition">
+                        <i class="ph-bold ph-phone-call text-lg text-[#F433AB]"></i>
+                        Llamar gratis a PROFEDET (800 911 7877)
+                    </a>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- BARRA DE NAVEGACIÓN INFERIOR FIJA (5 PESTAÑAS) -->
+        <nav class="fixed bottom-0 left-0 right-0 max-w-[480px] mx-auto bg-white border-t border-[#65334D]/15 px-2 py-2 flex justify-around items-center z-30 shadow-[0_-4px_20px_rgba(45,17,21,0.06)]">
+            <button onclick="cambiarPestana('inicio')" id="nav-inicio" class="nav-btn flex flex-col items-center justify-center py-1 px-2 rounded-xl text-[#CB04A5] font-bold transition">
+                <i class="ph-fill ph-house text-2xl"></i>
+                <span class="text-[11px] mt-0.5">Inicio</span>
+            </button>
+            <button onclick="cambiarPestana('ia')" id="nav-ia" class="nav-btn flex flex-col items-center justify-center py-1 px-2 rounded-xl text-[#65334D] font-medium transition">
+                <i class="ph ph-chat-teardrop-text text-2xl"></i>
+                <span class="text-[11px] mt-0.5">Asesor IA</span>
+            </button>
+            <button onclick="cambiarPestana('leyes')" id="nav-leyes" class="nav-btn flex flex-col items-center justify-center py-1 px-2 rounded-xl text-[#65334D] font-medium transition">
+                <i class="ph ph-book-open text-2xl"></i>
+                <span class="text-[11px] mt-0.5">Leyes LFT</span>
+            </button>
+            <button onclick="cambiarPestana('abogados')" id="nav-abogados" class="nav-btn flex flex-col items-center justify-center py-1 px-2 rounded-xl text-[#65334D] font-medium transition">
+                <i class="ph ph-users-three text-2xl"></i>
+                <span class="text-[11px] mt-0.5">Abogados</span>
+            </button>
+            <button onclick="cambiarPestana('guia')" id="nav-guia" class="nav-btn flex flex-col items-center justify-center py-1 px-2 rounded-xl text-[#65334D] font-medium transition">
+                <i class="ph ph-compass text-2xl"></i>
+                <span class="text-[11px] mt-0.5">Guía</span>
+            </button>
+        </nav>
+
+        <!-- ==========================================
+             MODALES (PRIVACIDAD LFPDPPP, EMERGENCIA Y VINCULACIÓN)
+             ========================================== -->
+
+        <!-- MODAL 1: AVISO DE PRIVACIDAD Y CONSENTIMIENTO (LFPDPPP) -->
+        <div id="modal-privacidad" class="fixed inset-0 z-50 bg-[#2D1115]/80 backdrop-blur-sm flex items-center justify-center p-4">
+            <div class="bg-white max-w-md w-full rounded-3xl p-6 shadow-2xl border border-[#CB04A5]/30 space-y-4">
+                <div class="w-12 h-12 rounded-2xl bg-[#CB04A5]/15 text-[#CB04A5] flex items-center justify-center">
+                    <i class="ph-bold ph-lock-key text-3xl"></i>
+                </div>
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-wider text-[#934683]">Ciberseguridad y Protección</span>
+                    <h2 class="text-xl font-extrabold text-[#2D1115] mt-0.5">Tu identidad está protegida</h2>
+                </div>
+                <p class="text-sm text-[#65334D] leading-relaxed">
+                    Sabemos que temes represalias en tu trabajo. Por ello, operamos bajo la <strong>Ley Federal de Protección de Datos Personales (LFPDPPP)</strong>:
+                </p>
+                <ul class="text-xs text-[#2D1115] space-y-2 bg-[#FAF7F9] p-3.5 rounded-2xl border border-[#65334D]/15">
+                    <li class="flex items-start gap-2">
+                        <i class="ph-fill ph-check-circle text-[#CB04A5] text-base shrink-0"></i>
+                        <span><strong>Anonimización total:</strong> No pedimos el nombre de tu empresa ni tus datos personales para orientarte.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="ph-fill ph-check-circle text-[#CB04A5] text-base shrink-0"></i>
+                        <span><strong>Sin letras chiquitas:</strong> Esta plataforma orienta y te conecta con ayuda ética; no sustituye la representación formal.</span>
+                    </li>
+                </ul>
+                <button onclick="cerrarModalPrivacidad()" class="w-full py-3.5 rounded-xl font-bold text-white shadow-md active:scale-95 transition" style="background-color: #CB04A5;">
+                    Entendido, continuar de forma segura
+                </button>
+            </div>
+        </div>
+
+        <!-- MODAL 2: GUÍA DE EMERGENCIA HOJA EN BLANCO -->
+        <div id="modal-emergencia" class="hidden fixed inset-0 z-50 bg-[#2D1115]/80 backdrop-blur-sm flex items-end sm:items-center justify-center p-4">
+            <div class="bg-white max-w-md w-full rounded-3xl p-6 shadow-2xl space-y-4 max-h-[90dvh] overflow-y-auto">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-extrabold uppercase bg-[#F433AB] text-white px-3 py-1 rounded-full">
+                        Protocolo de Emergencia
+                    </span>
+                    <button onclick="cerrarModalEmergencia()" class="w-8 h-8 rounded-full bg-[#FAF7F9] text-[#2D1115] flex items-center justify-center font-bold">✕</button>
+                </div>
+                <h2 class="text-xl font-extrabold text-[#2D1115]">¡NO firmes hojas en blanco ni renuncias!</h2>
+                <p class="text-sm text-[#65334D] leading-relaxed">
+                    Si te presionan, te amenazan con "boletinarte" o te dicen que "si no firmas no te dan nada", recuerda esto:
+                </p>
+                <div class="space-y-3 text-sm">
+                    <div class="p-3.5 rounded-2xl bg-[#FAF7F9] border-l-4 border-[#CB04A5]">
+                        <strong class="text-[#2D1115] block">1. Nadie puede obligarte a firmar</strong>
+                        <span class="text-xs text-[#65334D]">Retírate con calma. No pueden retenerte ni quitarte tus pertenencias.</span>
+                    </div>
+                    <div class="p-3.5 rounded-2xl bg-[#FAF7F9] border-l-4 border-[#F433AB]">
+                        <strong class="text-[#2D1115] block">2. Artículo 33 de la LFT</strong>
+                        <span class="text-xs text-[#65334D]">Cualquier documento donde renuncies a tus derechos o prestaciones devengadas es <strong>nulo por ley</strong>.</span>
+                    </div>
+                    <div class="p-3.5 rounded-2xl bg-[#FAF7F9] border-l-4 border-[#2D1115]">
+                        <strong class="text-[#2D1115] block">3. Si ya firmaste bajo engaño</strong>
+                        <span class="text-xs text-[#65334D]">Aún puedes impugnarlo ante el Centro de Conciliación demostrando coacción.</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-2 pt-2">
+                    <button onclick="cerrarModalEmergencia(); enviarPreguntaRapida('Me acaban de pedir firmar una hoja en blanco')" class="py-3 px-3 rounded-xl font-bold text-xs text-white bg-[#CB04A5]">
+                        Pedir ayuda al Asesor IA
+                    </button>
+                    <button onclick="cerrarModalEmergencia()" class="py-3 px-3 rounded-xl font-bold text-xs text-[#2D1115] bg-[#FAF7F9] border border-[#65334D]/25">
+                        Cerrar aviso
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL 3: VINCULACIÓN ANÓNIMA CON ABOGADO -->
+        <div id="modal-vinculacion" class="hidden fixed inset-0 z-50 bg-[#2D1115]/80 backdrop-blur-sm flex items-center justify-center p-4">
+            <div class="bg-white max-w-md w-full rounded-3xl p-6 shadow-2xl space-y-4">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold uppercase text-[#CB04A5]">Canalización Ética Cifrada</span>
+                    <button onclick="cerrarModalVinculacion()" class="w-8 h-8 rounded-full bg-[#FAF7F9] text-[#2D1115] flex items-center justify-center font-bold">✕</button>
+                </div>
+                <h2 class="text-lg font-extrabold text-[#2D1115]" id="vinc-abogado-nombre">Vincular caso</h2>
+                <p class="text-xs text-[#65334D]" id="vinc-abogado-info"></p>
+
+                <div class="p-3.5 rounded-2xl bg-[#FAF7F9] border border-[#65334D]/20 space-y-2 text-xs">
+                    <div class="font-bold text-[#2D1115] flex items-center gap-1.5">
+                        <i class="ph-fill ph-eye-slash text-[#CB04A5]"></i>
+                        Vista previa del expediente anonimizado:
+                    </div>
+                    <p class="text-[#65334D]" id="vinc-resumen-caso">
+                        • Categoría: Orientación Laboral General<br>
+                        • Ubicación: Zona Metropolitana de Guadalajara<br>
+                        • Identidad del trabajador: [OCULTA HASTA ACEPTACIÓN]
+                    </p>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-[#2D1115] mb-1">¿Cómo prefieres que te contacten si aceptas?</label>
+                    <input type="tel" id="vinc-contacto" placeholder="Tu WhatsApp (10 dígitos) o alias" class="w-full px-3.5 py-2.5 rounded-xl border border-[#65334D]/30 text-sm focus:outline-none focus:border-[#CB04A5]">
+                </div>
+
+                <div id="vinc-confirmacion" class="hidden p-3 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-900 text-xs font-semibold">
+                    ✅ ¡Folio generado! Tu resumen técnico fue enviado de forma segura. Recibirás respuesta sin comprometer tu empleo actual.
+                </div>
+
+                <button id="btn-confirmar-vinc" onclick="confirmarVinculacion()" class="w-full py-3.5 rounded-xl font-bold text-sm text-white shadow-md transition" style="background-color: #CB04A5;">
+                    Enviar solicitud anónima
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         LÓGICA DE LA APLICACIÓN (PLN, CALCULADORA, FILTRADO COLABORATIVO)
+         ========================================== -->
+    <script>
+        // 1. BASE DE CONOCIMIENTO DE LA LEY FEDERAL DEL TRABAJO (LENGUAJE CIUDADANO)
+        const leyesLFT = [
+            {
+                id: 'hoja-blanco',
+                cotidiano: '"Me hacen firmar una hoja en blanco o mi renuncia antes de pagarme"',
+                articulo: 'Artículo 33 · Ley Federal del Trabajo',
+                titulo: 'Nulidad de renuncia a tus derechos',
+                explicacion: 'Es totalmente ilegal obligarte a firmar hojas en blanco o renuncias falsas. Cualquier documento donde renuncies a tus prestaciones o indemnización no tiene validez legal si hubo engaño o presión.',
+                tags: ['hoja en blanco', 'renuncia', 'firmar', 'engaño', 'presion']
+            },
+            {
+                id: 'despido',
+                cotidiano: '"Me corrieron sin motivo y no me quieren dar liquidación"',
+                articulo: 'Artículos 48 y 50 · Ley Federal del Trabajo',
+                titulo: 'Despido Injustificado e Indemnización',
+                explicacion: 'Si te despiden sin una causa grave comprobada por escrito, tienes derecho a exigir 3 meses de salario como indemnización constitucional, más tu aguinaldo, vacaciones y prima de antigüedad.',
+                tags: ['despido', 'corrieron', 'liquidacion', 'indemnizacion', '3 meses']
+            },
+            {
+                id: 'informal',
+                cotidiano: '"Trabajo de palabra, no firmé contrato ni me dieron seguro (IMSS)"',
+                articulo: 'Artículos 20 y 21 · Ley Federal del Trabajo',
+                titulo: 'Protección en Empleo Informal',
+                explicacion: 'Aunque no exista un contrato firmado, si recibes órdenes y un pago por tu trabajo, ¡tienes todos los derechos de ley! La falta de contrato escrito es culpa del patrón, nunca tuya.',
+                tags: ['informal', 'sin contrato', 'imss', 'seguro', 'palabra', 'efectivo']
+            },
+            {
+                id: 'horas-extra',
+                cotidiano: '"Me quedo después de mi hora de salida y no me pagan el tiempo extra"',
+                articulo: 'Artículos 66, 67 y 68 · Ley Federal del Trabajo',
+                titulo: 'Pago de Horas Extraordinarias',
+                explicacion: 'La jornada máxima diurna es de 8 horas. Las primeras 9 horas extra a la semana se pagan al doble (200%) y si pasas de 9 horas extra, se pagan al triple (300%).',
+                tags: ['horas extra', 'horario', 'jornada', 'doble', 'triple', 'salida']
+            },
+            {
+                id: 'aguinaldo',
+                cotidiano: '"No me dieron aguinaldo o me dieron menos porque trabajé pocos meses"',
+                articulo: 'Artículo 87 · Ley Federal del Trabajo',
+                titulo: 'Aguinaldo Anual Irrenunciable',
+                explicacion: 'Te corresponden mínimo 15 días de salario al año, pagaderos antes del 20 de diciembre. Si no trabajaste el año completo, te deben pagar la parte proporcional a los días que laboraste.',
+                tags: ['aguinaldo', 'diciembre', 'prestaciones', 'proporcional']
+            },
+            {
+                id: 'plazo',
+                cotidiano: '"¿Cuánto tiempo tengo para reclamar después de que me despidieron?"',
+                articulo: 'Artículo 518 · Ley Federal del Trabajo',
+                titulo: 'Plazo de 60 Días Naturales',
+                explicacion: 'Tienes exactamente 2 meses (60 días naturales) desde el día siguiente al despido para acudir al Centro de Conciliación Laboral. Si pasa ese tiempo, el derecho prescribe.',
+                tags: ['tiempo', 'plazo', 'dias', 'demandar', 'conciliacion']
+            }
+        ];
+
+        // 2. DIRECTORIO DE DEFENSA ÉTICA Y FILTRADO COLABORATIVO EN ZMG
+        const redAbogadosZMG = [
+            {
+                id: 'profedet',
+                iniciales: 'PRO',
+                nombre: 'PROFEDET / Procuraduría Laboral Jalisco',
+                especialidad: 'Todo tipo de conflictos laborales · Representación Pública',
+                categorias: ['despido', 'hoja-blanco', 'informal', 'horas-extra', 'general'],
+                municipio: 'Guadalajara',
+                coberturaZMG: true,
+                rating: 4.9,
+                casosExito: '94%',
+                costo: '100% Gratuito (Gobierno)',
+                esGratuito: true
+            },
+            {
+                id: 'ana-gomez',
+                iniciales: 'ALG',
+                nombre: 'Lic. Ana Laura Gómez',
+                especialidad: 'Despidos Injustificados y Hojas en Blanco',
+                categorias: ['despido', 'hoja-blanco'],
+                municipio: 'Guadalajara',
+                coberturaZMG: false,
+                rating: 4.9,
+                casosExito: '92%',
+                costo: 'Tarifa Social / Sin adelanto',
+                esGratuito: false
+            },
+            {
+                id: 'carlos-ruiz',
+                iniciales: 'CRO',
+                nombre: 'Lic. Carlos Ruiz Orozco',
+                especialidad: 'Trabajo Informal, Sin IMSS y Horas Extra',
+                categorias: ['informal', 'horas-extra', 'despido'],
+                municipio: 'Zapopan',
+                coberturaZMG: false,
+                rating: 4.8,
+                casosExito: '89%',
+                costo: 'Asesoría inicial sin costo',
+                esGratuito: false
+            },
+            {
+                id: 'clinica-udg',
+                iniciales: 'UDG',
+                nombre: 'Brigada Jurídica Universitaria · ZMG',
+                especialidad: 'Orientación y Cálculo de Finiquitos (Recién Egresados)',
+                categorias: ['informal', 'horas-extra', 'general'],
+                municipio: 'Tlaquepaque',
+                coberturaZMG: true,
+                rating: 4.8,
+                casosExito: '91%',
+                costo: 'Pro-bono (Gratuito)',
+                esGratuito: true
+            },
+            {
+                id: 'sofia-mendoza',
+                iniciales: 'SM',
+                nombre: 'Lic. Sofía Mendoza',
+                especialidad: 'Rescisiones, Acoso y Liquidaciones Industriales',
+                categorias: ['despido', 'hoja-blanco', 'horas-extra'],
+                municipio: 'El Salto',
+                coberturaZMG: false,
+                rating: 4.9,
+                casosExito: '95%',
+                costo: 'Tarifa Social Ética',
+                esGratuito: false
+            },
+            {
+                id: 'despacho-tonala',
+                iniciales: 'DTL',
+                nombre: 'Colectivo Defensa Obrera Tonalá-Tlajomulco',
+                especialidad: 'Comercio Informal, Construcción y Despidos',
+                categorias: ['informal', 'despido'],
+                municipio: 'Tonalá',
+                coberturaZMG: false,
+                rating: 4.7,
+                casosExito: '88%',
+                costo: 'Sin pago por adelantado',
+                esGratuito: false
+            }
+        ];
+
+        // Estado global de diagnóstico para el filtrado colaborativo
+        let diagnosticoActual = {
+            categoria: null,
+            resumen: 'Consulta general sobre derechos laborales en Jalisco'
+        };
+
+        // Inicialización al cargar la página
+        window.onload = function() {
+            renderizarLeyes(leyesLFT);
+            renderizarAbogados();
+        };
+
+        // NAVEGACIÓN ENTRE PESTAÑAS
+        function cambiarPestana(idPestana) {
+            document.querySelectorAll('.tab-view').forEach(el => el.classList.remove('active'));
+            document.getElementById('view-' + idPestana).classList.add('active');
+
+            // Actualizar estilos de la barra inferior
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('text-[#CB04A5]', 'font-bold');
+                btn.classList.add('text-[#65334D]', 'font-medium');
+                const icon = btn.querySelector('i');
+                if (icon) icon.className = icon.className.replace('ph-fill', 'ph');
+            });
+
+            const btnActivo = document.getElementById('nav-' + idPestana);
+            btnActivo.classList.remove('text-[#65334D]', 'font-medium');
+            btnActivo.classList.add('text-[#CB04A5]', 'font-bold');
+            const iconActivo = btnActivo.querySelector('i');
+            if (iconActivo && !iconActivo.className.includes('ph-fill')) {
+                iconActivo.className = iconActivo.className.replace('ph ', 'ph-fill ');
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // MODALES
+        function abrirModalPrivacidad() {
+            document.getElementById('modal-privacidad').classList.remove('hidden');
+        }
+        function cerrarModalPrivacidad() {
+            document.getElementById('modal-privacidad').classList.add('hidden');
+        }
+        function abrirModalEmergencia() {
+            document.getElementById('modal-emergencia').classList.remove('hidden');
+        }
+        function cerrarModalEmergencia() {
+            document.getElementById('modal-emergencia').classList.add('hidden');
+        }
+
+        // ACCESIBILIDAD: LECTURA EN VOZ ALTA (WEB SPEECH API)
+        function hablarTexto(texto) {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(texto);
+                utterance.lang = 'es-MX';
+                utterance.rate = 0.95;
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        function leerPantallaActual() {
+            const vistaActiva = document.querySelector('.tab-view.active');
+            if (vistaActiva) {
+                const textoLimpio = vistaActiva.innerText.slice(0, 600);
+                hablarTexto(textoLimpio);
+            }
+        }
+
+        // ACCESIBILIDAD: DICTADO POR VOZ EN EL CHAT
+        function activarDictadoVoz() {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            const btnMic = document.getElementById('btn-mic');
+            const input = document.getElementById('chat-input');
+
+            if (!SpeechRecognition) {
+                input.placeholder = "Escribe aquí tu consulta...";
+                input.focus();
+                return;
+            }
+
+            const recognition = new SpeechRecognition();
+            recognition.lang = 'es-MX';
+            recognition.interimResults = false;
+
+            btnMic.classList.add('mic-pulse', 'bg-[#F433AB]', 'text-white');
+            input.placeholder = "Escuchando... habla ahora";
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript;
+                input.value = transcript;
+                btnMic.classList.remove('mic-pulse', 'bg-[#F433AB]', 'text-white');
+                input.placeholder = "Escribe tu problema aquí...";
+                procesarMensajeUsuario(transcript);
+                input.value = '';
+            };
+
+            recognition.onerror = function() {
+                btnMic.classList.remove('mic-pulse', 'bg-[#F433AB]', 'text-white');
+                input.placeholder = "Escribe tu problema aquí...";
+            };
+
+            recognition.start();
+        }
+
+        // CALCULADORA DE LIQUIDACIÓN LFT
+        function calcularLiquidacion() {
+            const sueldo = parseFloat(document.getElementById('calc-sueldo').value);
+            const periodo = document.getElementById('calc-periodo').value;
+            const anios = parseInt(document.getElementById('calc-anios').value) || 0;
+            const meses = parseInt(document.getElementById('calc-meses').value) || 0;
+            const motivo = document.getElementById('calc-motivo').value;
+
+            if (!sueldo || sueldo <= 0) {
+                document.getElementById('calc-sueldo').focus();
+                return;
+            }
+
+            // Conversión a salario diario
+            let salarioDiario = sueldo;
+            if (periodo === 'semanal') salarioDiario = sueldo / 7;
+            if (periodo === 'quincenal') salarioDiario = sueldo / 15;
+            if (periodo === 'mensual') salarioDiario = sueldo / 30;
+
+            const tiempoTotalAnios = anios + (meses / 12);
+            const fraccionAnio = (meses > 0 ? meses / 12 : (anios === 0 ? 0.5 : 1));
+
+            // Prestaciones irrenunciables (proporcionales del año)
+            const aguinaldo = salarioDiario * 15 * fraccionAnio;
+            const diasVacaciones = anios >= 1 ? 12 + (anios - 1) * 2 : 12;
+            const vacaciones = salarioDiario * diasVacaciones * fraccionAnio;
+            const primaVacacional = vacaciones * 0.25;
+
+            let indemnizacion3Meses = 0;
+            let primaAntiguedad = 0;
+
+            if (motivo === 'despido') {
+                // Art. 48 LFT: 90 días de salario
+                indemnizacion3Meses = salarioDiario * 90;
+                // Art. 162 LFT: 12 días por año (topado a 2 salarios mínimos aprox $557 MXN)
+                const salarioTopado = Math.min(salarioDiario, 557.86);
+                primaAntiguedad = salarioTopado * 12 * Math.max(tiempoTotalAnios, 0.5);
+            }
+
+            const total = indemnizacion3Meses + primaAntiguedad + aguinaldo + vacaciones + primaVacacional;
+
+            const formatoMXN = (num) => num.toLocaleString('es-MX', { style: 'currency', currency: 'MXN' });
+
+            let htmlDesglose = `
+                <div class="flex justify-between"><span>Salario diario calculado:</span> <strong>${formatoMXN(salarioDiario)}</strong></div>
+                <div class="flex justify-between"><span>Aguinaldo proporcional (15 días):</span> <strong>${formatoMXN(aguinaldo)}</strong></div>
+                <div class="flex justify-between"><span>Vacaciones + 25% Prima:</span> <strong>${formatoMXN(vacaciones + primaVacacional)}</strong></div>
+            `;
+
+            if (motivo === 'despido') {
+                htmlDesglose += `
+                    <div class="flex justify-between text-[#CB04A5]"><span>Indemnización 3 meses (Art. 48):</span> <strong>${formatoMXN(indemnizacion3Meses)}</strong></div>
+                    <div class="flex justify-between text-[#CB04A5]"><span>Prima de antigüedad (12 días/año):</span> <strong>${formatoMXN(primaAntiguedad)}</strong></div>
+                `;
+            }
+
+            document.getElementById('res-total').innerText = formatoMXN(total);
+            document.getElementById('res-desglose').innerHTML = htmlDesglose;
+            document.getElementById('calc-resultado').classList.remove('hidden');
+        }
+
+        // MOTOR PLN DE DIAGNÓSTICO JURÍDICO (MODISMOS JALISCO -> LFT)
+        function analizarTextoPLN(texto) {
+            const q = texto.toLowerCase();
+
+            if (q.includes('blanco') || q.includes('firmar') || q.includes('renuncia')) {
+                return {
+                    categoria: 'hoja-blanco',
+                    urgencia: 'ALTA · Acción Inmediata',
+                    tituloJuridico: 'Vicio del Consentimiento / Coacción (Art. 33 LFT)',
+                    respuesta: '¡No firmes ninguna hoja en blanco! Según el Artículo 33 de la Ley Federal del Trabajo, cualquier documento donde te hagan renunciar a tus derechos es nulo. Si te presionan, sal del lugar, guarda mensajes o testigos y solicita apoyo de inmediato.',
+                    resumen: 'Posible coacción para firmar hoja en blanco o renuncia forzada (Art. 33 LFT).'
+                };
+            }
+
+            if (q.includes('corrieron') || q.includes('despid') || q.includes('liquidacion') || q.includes('liquidación') || q.includes('nada')) {
+                return {
+                    categoria: 'despido',
+                    urgencia: 'ALTA · Plazo de 60 días (Art. 518)',
+                    tituloJuridico: 'Despido Injustificado (Art. 48 LFT)',
+                    respuesta: 'Si te despidieron sin causa justificada, la ley te respalda: tienes derecho a 3 meses de salario de indemnización, aguinaldo, vacaciones y prima de antigüedad. Recuerda que tienes 60 días naturales para acudir al Centro de Conciliación de Jalisco.',
+                    resumen: 'Despido injustificado sin pago de indemnización constitucional (Art. 48 LFT).'
+                };
+            }
+
+            if (q.includes('contrato') || q.includes('imss') || q.includes('seguro') || q.includes('informal') || q.includes('palabra')) {
+                return {
+                    categoria: 'informal',
+                    urgencia: 'MEDIA-ALTA · Derechos Vigentes',
+                    tituloJuridico: 'Relación Laboral Informal Protegida (Art. 20 LFT)',
+                    respuesta: '¡No importa que no hayas firmado contrato ni tengas IMSS! El Artículo 20 de la LFT establece que basta con que prestes un trabajo subordinado y recibas un pago para tener todos los derechos de ley. Guarda recibos, transferencias o mensajes como prueba.',
+                    resumen: 'Relación laboral sin contrato escrito ni seguridad social (Art. 20 LFT).'
+                };
+            }
+
+            if (q.includes('hora') || q.includes('extra') || q.includes('turno') || q.includes('salida')) {
+                return {
+                    categoria: 'horas-extra',
+                    urgencia: 'MEDIA · Reclamo Salarial',
+                    tituloJuridico: 'Jornada Extraordinaria No Remunerada (Arts. 67-68 LFT)',
+                    respuesta: 'Tu jornada diurna máxima es de 8 horas. Las primeras 9 horas extra de la semana deben pagarse al doble (200%) y las siguientes al triple (300%). Anota en una libreta tus horarios diarios de entrada y salida.',
+                    resumen: 'Adeudo de tiempo extraordinario laborado (Arts. 67 y 68 LFT).'
+                };
+            }
+
+            return {
+                categoria: 'general',
+                urgencia: 'ORIENTACIÓN PREVENTIVA',
+                tituloJuridico: 'Consulta General · Ley Federal del Trabajo',
+                respuesta: 'Entiendo tu situación. En Jalisco ningún patrón puede vulnerar tus prestaciones irrenunciables (aguinaldo, vacaciones, salario íntegro). Te recomiendo calcular tu estimado en la pestaña Inicio o vincularte de forma gratuita y anónima con un especialista.',
+                resumen: 'Consulta laboral general para revisión de derechos y prestaciones.'
+            };
+        }
+
+        function manejarEnvioChat(e) {
+            e.preventDefault();
+            const input = document.getElementById('chat-input');
+            const texto = input.value.trim();
+            if (!texto) return;
+            input.value = '';
+            procesarMensajeUsuario(texto);
+        }
+
+        function enviarPreguntaRapida(texto) {
+            cambiarPestana('ia');
+            procesarMensajeUsuario(texto);
+        }
+
+        function procesarMensajeUsuario(texto) {
+            const contenedor = document.getElementById('chat-messages');
+
+            // 1. Burbuja del usuario
+            const msgUser = document.createElement('div');
+            msgUser.className = 'flex flex-col items-end';
+            msgUser.innerHTML = `
+                <div class="bg-[#CB04A5] text-white p-3.5 rounded-2xl rounded-tr-none shadow-sm text-sm max-w-[85%] leading-relaxed">
+                    ${texto}
+                </div>
+            `;
+            contenedor.appendChild(msgUser);
+            contenedor.scrollTop = contenedor.scrollHeight;
+
+            // 2. Respuesta del motor PLN
+            const dx = analizarTextoPLN(texto);
+            diagnosticoActual = { categoria: dx.categoria, resumen: dx.resumen };
+
+            setTimeout(() => {
+                const msgBot = document.createElement('div');
+                msgBot.className = 'flex flex-col items-start max-w-[92%] space-y-2';
+                msgBot.innerHTML = `
+                    <div class="bg-white p-4 rounded-2xl rounded-tl-none shadow-sm border border-[#65334D]/20 text-sm text-[#2D1115] space-y-2.5">
+                        <div class="flex items-center justify-between gap-2">
+                            <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-[#F433AB]/15 text-[#CB04A5]">
+                                ${dx.urgencia}
+                            </span>
+                            <button onclick="hablarTexto('${dx.respuesta.replace(/'/g, "")}')" class="text-xs font-bold text-[#934683] hover:text-[#CB04A5] flex items-center gap-1">
+                                <i class="ph-bold ph-speaker-high"></i> Escuchar
+                            </button>
+                        </div>
+                        <div class="font-extrabold text-[#2D1115] text-sm">${dx.tituloJuridico}</div>
+                        <p class="text-xs text-[#65334D] leading-relaxed">${dx.respuesta}</p>
+                        <button onclick="irAMatchingAbogados()" class="w-full mt-1 py-2.5 px-3 rounded-xl bg-[#2D1115] hover:bg-[#65334D] text-white font-bold text-xs flex items-center justify-center gap-1.5 transition">
+                            <i class="ph-bold ph-user-check text-base text-[#F433AB]"></i>
+                            Vincular con abogado ideal para este caso
+                        </button>
+                    </div>
+                `;
+                contenedor.appendChild(msgBot);
+                contenedor.scrollTop = contenedor.scrollHeight;
+            }, 350);
+        }
+
+        function reiniciarChat() {
+            const contenedor = document.getElementById('chat-messages');
+            contenedor.innerHTML = `
+                <div class="flex flex-col items-start max-w-[88%]">
+                    <div class="bg-white p-3.5 rounded-2xl rounded-tl-none shadow-sm border border-[#65334D]/15 text-sm text-[#2D1115] leading-relaxed">
+                        Conversación reiniciada. Cuéntame con tus propias palabras cómo puedo ayudarte hoy.
+                    </div>
+                </div>
+            `;
+        }
+
+        // BIBLIOTECA LFT
+        function renderizarLeyes(lista) {
+            const contenedor = document.getElementById('lista-leyes');
+            contenedor.innerHTML = lista.map(ley => `
+                <article class="bg-white p-4 rounded-2xl border border-[#65334D]/15 shadow-sm space-y-2">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[11px] font-bold uppercase tracking-wider text-[#CB04A5]">${ley.articulo}</span>
+                        <button onclick="hablarTexto('${ley.titulo}. ${ley.explicacion}')" class="text-[#934683] hover:text-[#CB04A5] p-1" title="Escuchar artículo">
+                            <i class="ph-bold ph-speaker-high text-lg"></i>
+                        </button>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-[#FAF7F9] text-xs font-semibold text-[#65334D] italic">
+                        En tus palabras: ${ley.cotidiano}
+                    </div>
+                    <h3 class="text-base font-extrabold text-[#2D1115]">${ley.titulo}</h3>
+                    <p class="text-xs text-[#2D1115]/85 leading-relaxed">${ley.explicacion}</p>
+                </article>
+            `).join('');
+        }
+
+        function filtrarLeyes() {
+            const q = document.getElementById('buscador-leyes').value.toLowerCase();
+            const filtradas = leyesLFT.filter(l =>
+                l.titulo.toLowerCase().includes(q) ||
+                l.cotidiano.toLowerCase().includes(q) ||
+                l.explicacion.toLowerCase().includes(q) ||
+                l.tags.some(t => t.includes(q))
+            );
+            renderizarLeyes(filtradas);
+        }
+
+        // FILTRADO COLABORATIVO DE ABOGADOS EN ZMG
+        function irAMatchingAbogados() {
+            cambiarPestana('abogados');
+            const banner = document.getElementById('banner-matching');
+            banner.classList.remove('hidden');
+            document.getElementById('matching-desc').innerText = `Caso detectado: ${diagnosticoActual.resumen}`;
+            renderizarAbogados();
+        }
+
+        function limpiarMatching() {
+            diagnosticoActual.categoria = null;
+            document.getElementById('banner-matching').classList.add('hidden');
+            renderizarAbogados();
+        }
+
+        function renderizarAbogados() {
+            const municipioSel = document.getElementById('filtro-municipio').value;
+            const contenedor = document.getElementById('lista-abogados');
+
+            // Calcular puntuación de compatibilidad (Filtrado Colaborativo)
+            let candidatos = redAbogadosZMG.map(ab => {
+                let score = 75;
+                if (diagnosticoActual.categoria && ab.categorias.includes(diagnosticoActual.categoria)) {
+                    score += 20;
+                }
+                if (municipioSel !== 'Todos' && (ab.municipio === municipioSel || ab.coberturaZMG)) {
+                    score += 4;
+                }
+                if (ab.esGratuito) score += 1;
+                return { ...ab, matchScore: Math.min(score, 99) };
+            });
+
+            // Filtrar por municipio si no es "Todos"
+            if (municipioSel !== 'Todos') {
+                candidatos = candidatos.filter(ab => ab.municipio === municipioSel || ab.coberturaZMG);
+            }
+
+            // Ordenar por mayor afinidad
+            candidatos.sort((a, b) => b.matchScore - a.matchScore);
+
+            contenedor.innerHTML = candidatos.map(ab => `
+                <div class="bg-white p-4 rounded-2xl border border-[#65334D]/15 shadow-sm space-y-3">
+                    <div class="flex items-start justify-between gap-2">
+                        <div class="flex items-center gap-3">
+                            <div class="w-12 h-12 rounded-2xl ${ab.esGratuito ? 'bg-[#2D1115] text-white' : 'bg-[#CB04A5]/15 text-[#CB04A5]'} font-extrabold flex items-center justify-center text-sm shrink-0">
+                                ${ab.iniciales}
+                            </div>
+                            <div>
+                                <h3 class="font-extrabold text-sm text-[#2D1115]">${ab.nombre}</h3>
+                                <p class="text-xs text-[#934683] font-semibold">${ab.especialidad}</p>
+                            </div>
+                        </div>
+                        ${diagnosticoActual.categoria ? `
+                            <span class="shrink-0 text-[11px] font-extrabold bg-[#F433AB]/15 text-[#CB04A5] px-2.5 py-1 rounded-full">
+                                ${ab.matchScore}% Match
+                            </span>
+                        ` : ''}
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-2 text-[11px] text-[#65334D]">
+                        <span class="bg-[#FAF7F9] px-2.5 py-1 rounded-lg border border-[#65334D]/15">📍 ${ab.municipio}</span>
+                        <span class="bg-[#FAF7F9] px-2.5 py-1 rounded-lg border border-[#65334D]/15">★ ${ab.rating} (${ab.casosExito} éxito)</span>
+                        <span class="bg-emerald-50 text-emerald-800 font-semibold px-2.5 py-1 rounded-lg border border-emerald-200">${ab.costo}</span>
+                    </div>
+
+                    <button onclick="abrirModalVinculacion('${ab.nombre}', '${ab.especialidad} · ${ab.municipio}')" class="w-full py-2.5 px-4 rounded-xl font-bold text-xs text-white transition active:scale-[0.98]" style="background-color: #2D1115;">
+                        Solicitar Vinculación Anónima
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // MODAL DE VINCULACIÓN ANÓNIMA
+        function abrirModalVinculacion(nombre, info) {
+            document.getElementById('vinc-abogado-nombre').innerText = nombre;
+            document.getElementById('vinc-abogado-info').innerText = info;
+            const muni = document.getElementById('filtro-municipio').value;
+            document.getElementById('vinc-resumen-caso').innerHTML = `
+                • Diagnóstico técnico: ${diagnosticoActual.resumen}<br>
+                • Zona: ${muni === 'Todos' ? 'Zona Metropolitana de Guadalajara' : muni}<br>
+                • Nombre y empresa del trabajador: <strong>[CIFRADO · PRIVADO]</strong>
+            `;
+            document.getElementById('vinc-confirmacion').classList.add('hidden');
+            document.getElementById('btn-confirmar-vinc').classList.remove('hidden');
+            document.getElementById('modal-vinculacion').classList.remove('hidden');
+        }
+
+        function cerrarModalVinculacion() {
+            document.getElementById('modal-vinculacion').classList.add('hidden');
+        }
+
+        function confirmarVinculacion() {
+            document.getElementById('vinc-confirmacion').classList.remove('hidden');
+            document.getElementById('btn-confirmar-vinc').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
