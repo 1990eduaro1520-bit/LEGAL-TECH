@@ -109,7 +109,7 @@
                     </p>
                     <button onclick="irATab('ia')" class="w-full py-3.5 px-4 rounded-2xl bg-[#2D1115] hover:bg-[#2D1115]/90 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-md active:scale-98 transition">
                         <i data-lucide="bot" class="w-5 h-5 text-[#F433AB]"></i>
-                        <span>Abrir Asesor Legal IA</span>
+                        <span>Abrir asesor legal IA</span>
                     </button>
                 </div>
 
@@ -141,8 +141,8 @@
                 <div class="bg-white rounded-2xl p-5 shadow-sm border border-[#65334D]/15 space-y-3.5">
                     <div class="flex items-center justify-between">
                         <div>
-                            <span class="text-xs font-bold text-[#CB04A5] uppercase">Herramienta Laboral</span>
-                            <h3 class="text-lg font-extrabold text-[#2D1115]">Calculadora de Liquidación</h3>
+                            <span class="text-xs font-bold text-[#CB04A5] uppercase">Herramienta laboral</span>
+                            <h3 class="text-lg font-extrabold text-[#2D1115]">Calculadora de liquidación</h3>
                         </div>
                         <div class="w-10 h-10 rounded-xl bg-[#2D1115] text-white flex items-center justify-center">
                             <i data-lucide="calculator" class="w-5 h-5"></i>
@@ -176,7 +176,7 @@
 
                     <div id="caja-resultado-calc" class="hidden p-4 rounded-xl bg-[#FAF7F9] border-2 border-[#CB04A5]/30 space-y-2">
                         <div class="flex items-center justify-between border-b border-[#65334D]/15 pb-2">
-                            <span class="text-xs font-bold uppercase text-[#65334D]">Total Estimado LFT:</span>
+                            <span class="text-xs font-bold uppercase text-[#65334D]">Total estimado LFT:</span>
                             <span id="calc-total-monto" class="text-xl font-extrabold text-[#CB04A5]">$0.00</span>
                         </div>
                         <div id="calc-detalle-lista" class="text-xs text-[#2D1115] space-y-1"></div>
@@ -198,7 +198,7 @@
                         <div class="flex items-center gap-2">
                             <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
                             <div>
-                                <div class="text-sm font-bold leading-none">Asesor Legal IA · Jalisco</div>
+                                <div class="text-sm font-bold leading-none">Asesor legal IA · Jalisco</div>
                                 <div class="text-[11px] text-pink-200 mt-0.5">Laboral · Escrituras · Juicios · Familia</div>
                             </div>
                         </div>
@@ -211,7 +211,7 @@
                     <div id="chat-historial" class="flex-1 p-4 overflow-y-auto space-y-3 bg-[#FAF7F9]">
                         <div class="flex flex-col items-start max-w-[90%]">
                             <div class="bg-white p-3.5 rounded-2xl rounded-tl-none shadow-sm border border-[#65334D]/15 text-sm text-[#2D1115] leading-relaxed">
-                                ¡Hola! Cuéntame con tus propias palabras qué situación legal tienes en Jalisco (despidos, hojas en blanco, escrituración de propiedades, desalojos, pensiones, divorcios, pagarés o citatorios).
+                                ¡Hola! Cuéntame con tus propias palabras ¿Qué situación legal tienes?
                                 <div class="mt-2 text-xs font-semibold text-[#934683] flex items-center gap-1">
                                     <i data-lucide="lock" class="w-3.5 h-3.5"></i> Consulta anónima y confidencial
                                 </div>
@@ -299,7 +299,7 @@
                 <div class="bg-white p-4 rounded-2xl border border-[#65334D]/15 shadow-sm space-y-3">
                     <div class="flex items-center justify-between gap-2">
                         <div>
-                            <h2 class="text-lg font-extrabold text-[#2D1115]">Directorio Legal ZMG</h2>
+                            <h2 class="text-lg font-extrabold text-[#2D1115]">Directorio legal ZMG</h2>
                             <p class="text-xs text-[#65334D]">Despachos, notarías y defensoría gratuita</p>
                         </div>
                         <button onclick="mezclarYRenderizarAbogados()" class="px-3 py-2 rounded-xl text-xs font-bold bg-[#CB04A5]/10 text-[#CB04A5] hover:bg-[#CB04A5] hover:text-white flex items-center gap-1.5 transition active:scale-95">
@@ -311,10 +311,10 @@
                     <div class="grid grid-cols-2 gap-2">
                         <select id="filtro-rama" onchange="renderizarAbogados()" class="w-full px-3 py-2.5 rounded-xl bg-[#FAF7F9] border border-[#65334D]/30 text-xs font-bold text-[#2D1115] focus:outline-none focus:border-[#CB04A5]">
                             <option value="Todos">Todas las ramas</option>
-                            <option value="Laboral">Derecho Laboral</option>
-                            <option value="Escrituras">Escrituras y Notaría</option>
-                            <option value="Juicios">Juicios y Mercantil</option>
-                            <option value="Familiar">Derecho Familiar</option>
+                            <option value="Laboral">Derecho laboral</option>
+                            <option value="Escrituras">Escrituras y notaría</option>
+                            <option value="Juicios">Juicios y mercantil</option>
+                            <option value="Familiar">Derecho familiar</option>
                         </select>
 
                         <select id="filtro-municipio" onchange="renderizarAbogados()" class="w-full px-3 py-2.5 rounded-xl bg-[#FAF7F9] border border-[#65334D]/30 text-xs font-bold text-[#2D1115] focus:outline-none focus:border-[#CB04A5]">
@@ -324,7 +324,7 @@
                             <option value="Tlaquepaque">Tlaquepaque</option>
                             <option value="Tonalá">Tonalá</option>
                             <option value="Tlajomulco">Tlajomulco</option>
-                            <option value="El Salto">El Salto</option>
+                            <option value="El Salto">El salto</option>
                         </select>
                     </div>
                 </div>
