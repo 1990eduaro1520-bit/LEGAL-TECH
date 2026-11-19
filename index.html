@@ -338,22 +338,22 @@
             <section id="tab-guia" class="tab-panel space-y-4">
                 <div class="bg-white p-4 rounded-2xl border border-[#65334D]/15 shadow-sm space-y-3">
                     <div>
-                        <h2 class="text-lg font-extrabold text-[#2D1115]">Rutas Legales Paso a Paso</h2>
+                        <h2 class="text-lg font-extrabold text-[#2D1115]">Rutas legales paso a paso</h2>
                         <p class="text-xs text-[#65334D]">Elige un tema para conocer el procedimiento oficial en Jalisco:</p>
                     </div>
 
                     <div class="grid grid-cols-2 gap-2">
                         <button onclick="mostrarGuia('laboral')" id="pill-guia-laboral" class="pill-guia px-3 py-2.5 rounded-xl text-xs font-bold bg-[#CB04A5] text-white shadow-sm text-left flex items-center gap-1.5 transition">
-                            <i data-lucide="briefcase" class="w-4 h-4 shrink-0"></i> Despido y Trabajo
+                            <i data-lucide="briefcase" class="w-4 h-4 shrink-0"></i> Despido y trabajo
                         </button>
                         <button onclick="mostrarGuia('escrituras')" id="pill-guia-escrituras" class="pill-guia px-3 py-2.5 rounded-xl text-xs font-bold bg-[#FAF7F9] text-[#65334D] border border-[#65334D]/20 text-left flex items-center gap-1.5 transition">
-                            <i data-lucide="home" class="w-4 h-4 shrink-0"></i> Escrituras y Predios
+                            <i data-lucide="home" class="w-4 h-4 shrink-0"></i> Escrituras y predios
                         </button>
                         <button onclick="mostrarGuia('juicios')" id="pill-guia-juicios" class="pill-guia px-3 py-2.5 rounded-xl text-xs font-bold bg-[#FAF7F9] text-[#65334D] border border-[#65334D]/20 text-left flex items-center gap-1.5 transition">
-                            <i data-lucide="gavel" class="w-4 h-4 shrink-0"></i> Juicios y Demandas
+                            <i data-lucide="gavel" class="w-4 h-4 shrink-0"></i> Juicios y demandas
                         </button>
                         <button onclick="mostrarGuia('familia')" id="pill-guia-familia" class="pill-guia px-3 py-2.5 rounded-xl text-xs font-bold bg-[#FAF7F9] text-[#65334D] border border-[#65334D]/20 text-left flex items-center gap-1.5 transition">
-                            <i data-lucide="users" class="w-4 h-4 shrink-0"></i> Familia y Herencias
+                            <i data-lucide="users" class="w-4 h-4 shrink-0"></i> Familia y herencias
                         </button>
                     </div>
                 </div>
@@ -425,7 +425,7 @@
             <div class="bg-white max-w-sm w-full rounded-3xl p-6 shadow-2xl border border-[#CB04A5]/30 space-y-4">
                 <div class="flex items-center justify-between">
                     <span class="text-[11px] font-extrabold uppercase tracking-wider bg-[#F433AB]/15 text-[#CB04A5] px-2.5 py-1 rounded-full">
-                        Canalización Segura · LFPDPPP
+                        Canalización segura · LFPDPPP
                     </span>
                     <button onclick="cerrarModalVinculacion()" class="text-[#65334D] hover:text-[#2D1115]">
                         <i data-lucide="x" class="w-5 h-5"></i>
@@ -433,7 +433,7 @@
                 </div>
 
                 <div>
-                    <h3 id="modal-vinc-nombre" class="text-lg font-extrabold text-[#2D1115]">Nombre del Despacho</h3>
+                    <h3 id="modal-vinc-nombre" class="text-lg font-extrabold text-[#2D1115]">Nombre del despacho</h3>
                     <p id="modal-vinc-detalle" class="text-xs font-semibold text-[#934683] mt-0.5">Especialidad · Municipio</p>
                 </div>
 
@@ -445,7 +445,7 @@
                 <div class="flex items-start gap-2 text-[11px] text-[#65334D]">
                     <input type="checkbox" id="check-aviso-privacidad" checked class="mt-0.5 accent-[#CB04A5]">
                     <label for="check-aviso-privacidad">
-                        Acepto el Aviso de Privacidad (LFPDPPP) y autorizo generar un folio anónimo de atención sin revelar mi identidad hasta la cita.
+                        Acepto el aviso de privacidad (LFPDPPP) y autorizo generar un folio anónimo de atención sin revelar mi identidad hasta la cita.
                     </label>
                 </div>
 
@@ -524,12 +524,12 @@
                 codigo: 'Código Civil Jalisco · RPP',
                 rama: 'Escrituras',
                 titulo: 'Escrituración pública y registro público de la propiedad',
-                explicacion: 'Para que la compraventa de una casa o terreno en Jalisco tenga validez plena frente a terceros, debe otorgarse en escritura pública ante Notario e inscribirse en el Registro Público de la Propiedad.'
+                explicacion: 'Para que la compraventa de una casa o terreno en Jalisco tenga validez plena frente a terceros, debe otorgarse en escritura pública ante notario e inscribirse en el Registro Público de la Propiedad.'
             },
             {
                 codigo: 'Código civil Jalisco · Arrendamiento',
                 rama: 'Escrituras',
-                titulo: 'Prohibido el desalojo por la fuerza sin orden de un Juez',
+                titulo: 'Prohibido el desalojo por la fuerza sin orden de un juez',
                 explicacion: 'Ningún arrendador puede cambiar chapas, sacar pertenencias ni suspender agua o luz por propia mano. Todo desalojo requiere una sentencia emitida por un Juez Civil.'
             }
         ];
@@ -848,8 +848,8 @@
             if (q.includes('blanco') || q.includes('firmar') || q.includes('renuncia')) {
                 return {
                     rama: 'Laboral',
-                    urgencia: 'URGENCIA ALTA · Acción Inmediata',
-                    titulo: 'Coacción y Hoja en Blanco (Art. 33 LFT)',
+                    urgencia: 'URGENCIA ALTA · Acción inmediata',
+                    titulo: 'Coacción y hoja en blanco (Art. 33 LFT)',
                     respuesta: '¡No firmes ninguna hoja en blanco ni renuncia bajo presión! El Artículo 33 de la Ley Federal del Trabajo declara nula cualquier renuncia a tus derechos laborales. Conserva mensajes, audios o testigos y solicita apoyo inmediato.',
                     resumen: 'Coacción para firmar hoja en blanco o renuncia forzada (Art. 33 LFT).'
                 };
@@ -859,7 +859,7 @@
                 return {
                     rama: 'Laboral',
                     urgencia: 'URGENCIA ALTA · Plazo 60 días (Art. 518)',
-                    titulo: 'Despido Injustificado (Art. 48 LFT)',
+                    titulo: 'Despido injustificado (Art. 48 LFT)',
                     respuesta: 'Si te separaron de tu empleo sin causa justificada, tienes derecho a 3 meses de salario por indemnización constitucional, más aguinaldo, vacaciones y prima vacacional. Recuerda que cuentas con 60 días naturales para acudir al Centro de Conciliación de Jalisco.',
                     resumen: 'Despido injustificado y reclamación de indemnización constitucional (Art. 48 LFT).'
                 };
@@ -869,7 +869,7 @@
                 return {
                     rama: 'Laboral',
                     urgencia: 'DERECHOS PROTEGIDOS · Art. 20 LFT',
-                    titulo: 'Relación Laboral sin Contrato ni IMSS',
+                    titulo: 'Relación laboral sin contrato ni IMSS',
                     respuesta: 'Aunque trabajes de palabra y no tengas IMSS, el Artículo 20 de la LFT protege todos tus derechos si existe subordinación y pago. Guarda transferencias bancarias, mensajes o fotografías en tu lugar de trabajo como prueba.',
                     resumen: 'Acreditación de relación laboral informal sin contrato escrito ni IMSS (Art. 20 LFT).'
                 };
@@ -879,7 +879,7 @@
                 return {
                     rama: 'Escrituras',
                     urgencia: 'TRÁMITE INMOBILIARIO · Jalisco',
-                    titulo: 'Escrituración y Regularización (Registro Público Jalisco)',
+                    titulo: 'Escrituración y regularización (Registro Público Jalisco)',
                     respuesta: 'Para escriturar un terreno o casa en Jalisco debes verificar primero el Certificado de Libertad de Gravamen en el Registro Público de la Propiedad, tener predial y agua al corriente, realizar avalúo catastral y formalizar ante Notario Público.',
                     resumen: 'Escrituración y regularización de propiedad inmueble en Jalisco.'
                 };
@@ -889,7 +889,7 @@
                 return {
                     rama: 'Escrituras',
                     urgencia: 'PROTECCIÓN POSESORIA · Código Civil Jalisco',
-                    titulo: 'Garantía contra Desalojo Ilegal sin Orden Judicial',
+                    titulo: 'Garantía contra desalojo ilegal sin orden judicial',
                     respuesta: 'Nadie puede desalojarte a la fuerza, cambiar chapas ni cortar servicios básicos sin una orden escrita de un Juez Civil tras un juicio. Documenta cualquier amenaza y solicita intervención legal.',
                     resumen: 'Conflicto de arrendamiento y defensa contra desalojo sin orden judicial.'
                 };
@@ -899,7 +899,7 @@
                 return {
                     rama: 'Juicios',
                     urgencia: 'PLAZO PROCESAL CORRIENDO · 5 a 9 días',
-                    titulo: 'Atención Urgente a Citatorio o Demanda Judicial',
+                    titulo: 'Atención urgente a citatorio o demanda judicial',
                     respuesta: 'No ignores ninguna notificación judicial. Los plazos legales para contestar una demanda son breves (usualmente de 5 a 9 días hábiles). Revisa el juzgado y número de expediente y vincúlate de inmediato con un abogado litigante.',
                     resumen: 'Contestación urgente de citatorio o demanda judicial en Jalisco.'
                 };
@@ -909,7 +909,7 @@
                 return {
                     rama: 'Familiar',
                     urgencia: 'ATENCIÓN FAMILIAR PRIORITARIA',
-                    titulo: 'Pensión Alimenticia, Divorcio o Sucesión (Código Civil Jalisco)',
+                    titulo: 'Pensión alimenticia, divorcio o sucesión (Código Civil Jalisco)',
                     respuesta: 'La pensión alimenticia para hijos puede solicitarse de forma provisional inmediata al presentar la demanda, incluso si el deudor no tiene nómina formal. En divorcio incausado basta la voluntad de uno de los cónyuges ante el Juez Familiar.',
                     resumen: 'Trámite de pensión alimenticia, divorcio o sucesión en Jalisco.'
                 };
@@ -919,7 +919,7 @@
                 return {
                     rama: 'Juicios',
                     urgencia: 'VÍA EJECUTIVA MERCANTIL · Plazo 3 años',
-                    titulo: 'Cobro Judicial de Pagaré (LGTOC)',
+                    titulo: 'Cobro judicial de pagaré (LGTOC)',
                     respuesta: 'Con un pagaré firmado y vencido puedes promover un Juicio Ejecutivo Mercantil, el cual permite señalar bienes para embargo desde la primera diligencia judicial y asegurar el pago de tu dinero.',
                     resumen: 'Recuperación judicial de adeudo mediante pagaré.'
                 };
@@ -928,7 +928,7 @@
             return {
                 rama: 'Todos',
                 urgencia: 'ORIENTACIÓN LEGAL PREVENTIVA',
-                titulo: 'Diagnóstico General · Justicia a tu alcance',
+                titulo: 'Diagnóstico general · justicia a tu alcance',
                 respuesta: 'Hemos registrado tu consulta. Puedes revisar nuestras rutas paso a paso en la pestaña Guía o vincularte de forma gratuita y anónima con un especialista verificado en la Zona Metropolitana de Guadalajara.',
                 resumen: 'Consulta legal general en Zona Metropolitana de Guadalajara.'
             };
